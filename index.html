@@ -1,113 +1,571 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadershipt & Culture Playlist</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    <div class="header-wrapper">
-        <header>
-            <div>
-                <h1>Leadership & Culture</h1>
-            </div>
-        </header>
-        <nav>
-            <p>What is this and how does it relate to People Foundations? Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae! </p> 
-            <p>
-                View our <a id="dev-link" href="#develop">Self Development</a>, <a id="team-link" href="#collaborate">Team Collaboration</a>, <a id="lead-link" href="#lead">People Leadership</a> playlists below! 
-            </p>
-        </nav>
+<div class="html">
+    <div class="head">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning Playlists</title>
+        <link rel="stylesheet" href="main.css">
+        <style>
+            html, .body, div, span, applet, object, iframe,
+            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            b, u, i, center,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td,
+            article, aside, canvas, details, embed, 
+            figure, figcaption, footer, header, hgroup, 
+            menu, nav, output, ruby, section, summary,
+            time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font: inherit;
+                vertical-align: baseline;
+            }
+            /* HTML5 display-role reset for older browsers */
+            article, aside, details, figcaption, figure, 
+            footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+
+            ol, ul {
+                list-style: none;
+            }
+            blockquote, q {
+                quotes: none;
+            }
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+
+            /* apply a natural box layout model to all elements, but allowing components to change */
+            html {
+                -webkit-box-sizing: border-box;
+                        box-sizing: border-box;
+                font-size: 62.5%;
+            }
+            *, *:before, *:after {
+                -webkit-box-sizing: inherit;
+                        box-sizing: inherit;
+            }
+
+            /* cornerstone reset */
+            .widgetDropped {
+                margin: 0;
+            }
+
+            #mainContainer {
+                padding: 0 !important;
+            }
+            
+            div#ctl00_pnlBR {
+                height: 0;
+            }
+            /********** Mobile-First: Base Style ***********/
+            :root {
+                --grad-one: linear-gradient(150deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
+                --primary-blue: #0077c0;
+                --primary-purple: #6F2C91;  
+                --primary-pink: #9D2872;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .body {
+                line-height: 1.5;
+                font-size: 1.6rem;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #424242;
+
+            }
+
+            .header {
+                padding: 3.5rem;
+                background: #0077c0;
+                background: var(--primary-blue);
+                color: #fff;
+            }
+
+            main {
+                padding: 0 3.5rem;
+            }
+
+            .nav,
+            h1 {
+                padding: 3.5rem;
+            }
+
+            .nav a {
+                font-weight: bolder;
+            }
+
+            .nav a:hover {
+                background: linear-gradient(150deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
+                background: var(--grad-one);
+                color: #fff !important;
+            }
+
+            .nav p {
+                margin-top: 2rem;
+            }
+
+            #dev-link {
+                color: #2062AF;
+                color: var(--primary-blue);
+            }
+
+            #team-link {
+                color: #6F2C91;  
+                color: var(--primary-purple);
+            }
+
+
+            #lead-link {
+                color:#9D2872;
+                color: var(--primary-pink);
+            }
+
+            #foundation  {
+                color: #4156A6;
+            }
+
+            .underline {
+                /* background: linear-gradient(150deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%); */
+                /* background: var(--grad-one);
+                height: 3px;
+                margin-bottom: 6rem; */
+            } 
+
+            h1 {
+                font-size: 3.5rem;
+                font-weight: bolder;
+            }
+
+            h2 {
+                font-size: 4rem;
+            }
+
+            h3 {
+                font-size: 2.5rem;
+            }
+
+            h4 {
+                font-size: 2rem;
+            }
+
+            h1, h2, h3 {
+                line-height: 1;
+            }
+
+            .container, main {
+                scroll-snap-type: y mandatory;
+                scroll-snap-type: mandatory;
+                scroll-snap-points-y: repeat(3rem);
+                scroll-snap-type: y mandatory;
+            }
+
+            .playlist {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                padding-bottom: 1rem;
+                scroll-snap-align: start;
+            }
+
+            .cards a, .cards section {
+                position: relative;
+                float: left;
+                margin: 0.6rem;
+                height: 24rem;
+                text-decoration: none;
+                padding: 2rem;
+                color: white;
+                border-radius: 10px;
+            }
+
+            .cards h3 {
+                font-weight: bolder;
+                color: white;
+            }
+
+            .cards p {
+                padding-top: 0.5rem;
+                line-height: 1.3;
+                font-size: 1.6rem;
+            }
+
+            .foundations {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            #modal__one h2 {
+                color: #4156A6;
+            }
+
+            #leader-principle {
+                background: #2062AF;
+            }
+
+            #team-principle {
+                background: #4156A6;
+            }
+
+            #innovative-principle {
+                background: #6F2C91;  
+            }
+
+            #customer-principle {
+                background: #9D2872;
+            }
+
+            #inclusive-principle {
+                background: #D12244;
+            }
+
+            #develop a {
+                background: #2062AF;
+                background: var(--primary-blue);
+            }
+
+            #develop h2 {
+                color:#2062AF;
+                color: var(--primary-blue);
+            }
+
+            #collaborate a {
+                background: #6F2C91;  
+                background: var(--primary-purple);
+            }
+
+            #collaborate h2 {
+                color: #6F2C91;  
+                color: var(--primary-purple);
+                margin-top: 7rem;
+            }
+
+            #lead a {
+                background:#9D2872;
+                background: var(--primary-pink);
+            }
+
+            #lead h2 {
+                color:#9D2872;
+                color: var(--primary-pink);
+                margin-top: 7rem;
+            }
+
+            .cards a:hover{
+                background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #9D2872 100%) !important;
+                background: var(--grad-one) !important;
+            }
+
+            .start-btn {
+                position: absolute;
+                bottom: 2.2rem;
+                width: 80%;
+                margin-top: 1rem;
+                padding: 1rem;
+                border: 0.2rem #fff solid;
+                border-radius: 1rem;
+                text-align: center;
+                font-size: 1.6rem;
+                font-weight: bold;
+            }
+
+            /********** Desktop ***********/
+            @media (min-width: 970px) {
+                .body {
+                    font-size: 2rem;
+                }
+                
+                main,
+                .nav,
+                .header div {
+                    width: 100rem;
+                    margin: auto;
+                }
+
+                .nav {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
+                    height: 300px;
+                }
+
+                .header {
+                    padding: 10rem;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                }
+
+                #LC {
+                    margin-bottom: 2rem;
+                    margin-left: 0.6rem;
+                    font-size: 3rem;
+                }
+
+                h1 {
+                    font-size: 10rem;
+                    line-height: 1;
+                }
+
+                h2 {
+                    font-size: 6.315rem;
+                    margin-bottom: 1rem;
+                }
+
+                h3 {
+                    font-size: 2.5rem;
+                }
+
+                h4 {
+                    font-size: 3.554rem;
+                }
+
+                .cards {
+                    margin-top: 2rem;
+                }
+
+                .cards a{
+                    width: 22rem;
+                    line-height: 1;
+                }
+
+                .cards section {
+                    width: 26rem;
+                }
+
+                .start-btn {
+                    margin-top: 1.6rem;
+                }
+            }
+            /* IE9+ CSS */
+            @media screen and (min-width:0\0) and (min-resolution: +72dpi) {
+
+                .nav a:hover {
+                    background: rgb(51, 141, 197);
+                    background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
+                    color: #fff !important;
+                }
+
+                .cards a:hover {
+                    background: rgb(51, 141, 197) !important;
+                    background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%) !important;
+                }
+
+                .playlist { 
+                    width: 90rem;
+                    margin: auto;
+                }
+
+                .cards {
+                    display: -ms-flexbox;
+                    -ms-flex-wrap: wrap;
+                }
+
+                .cards a {
+                    margin: 0.5rem;
+                }
+            }
+        </style>
+
     </div>
-    <main>
-        <section class="container">
-            <div class="underline"></div>
+    <div class="body">
+        <div class="header-wrapper">
+            <div class="header">
+                <div>
+                    <h1><div id="LC">Leadership & Culture</div>Learning Playlists</h1>
+                </div>
+            </div>
+            <div class=nav>
+                <p>Diverse, entrepreneurial people are key to our 2025 growth strategy. How can you weave a <a class="modal__trigger" data-modal="#modal__one" href="#" target="_blank" id="foundation" href="#">People Foundation</a> mindset into your work at ResMed?</p> 
+                <div id="modal__one" class="modal modal__bg" role="dialog" aria-hidden="true">
+                    <div class="modal__dialog">
+                        <div class="modal__content">
+                            <h2>People Foundation</h2>
+                            <p>We are...</p>
+                            <div class="cards">
+                                <section class="foundations" id="leader-principle">
+                                    <h3>Leaders</h3>
+                                    <p>We own ResMed’s purpose; we lead and inspire self, teams, business and industry.</p>
+                                </section>
+                                <section class="foundations" id="team-principle">
+                                    <h3>Team Players</h3>
+                                    <p>We always put ResMed first and collaborate as teams to drive results.</p>
+                                </section>
+                                <section class="foundations" id="innovative-principle">
+                                    <h3>Innovative</h3>
+                                    <p>We solve big problems, are agile, always curious, think critically and drive change.</p>
+                                </section>
+                                <section class="foundations" id="customer-principle">
+                                    <h3>Customer Centric</h3>
+                                    <p>We seek to understand our customers and create world leading solutions.</p>
+                                </section>
+                                <section class="foundations" id="inclusive-principle">
+                                    <h3>Inclusive</h3>
+                                    <p>We respect diversity of people, thought and freely express our ideas.</p>
+                                </section>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <!-- modal close button -->
+                            <a href="" class="modal__close demo-close">
+                                <svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <br>
+                <p>
+                    Watch our <a id="dev-link" href="#develop">Self Development</a>, <a id="team-link" href="#collaborate">Team Collaboration</a>, <a id="lead-link" href="#lead">People Leadership</a> learning playlists below to learn how to connect the dots individually and collectively, both within teams and between teams. 
+                </p>
+            </div>
+        </div>
+        <main>
+            <div class="container">
             <section id="develop" class="playlist">
                 <h2>Self Development</h2>
                 <p>Explore your own development and impact.</p>
                 <div class="cards">
                     <a href="#" target="_blank">
                         <h3>Growth</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <p>Be proactive about your development by cultivating a growth mindset and creating a culture of feedback.</p>
+                        <span class="start-btn">Launch</span>
                     </a>
                     <a href="#" target="_blank">
-                        <h3>Flexibility</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <h3>Flexility</h3>
+                        <p>Set yourself up for success by finding the environment that works best for you.</p>
+                        <span class="start-btn">Launch</span>
                     </a>
                     <a href="#" target="_blank">
                         <h3>Inclusion</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <p>Challenge your thinking and question what you can do to be more inclusive.</p>
+                        <span class="start-btn">Launch</span>
                     </a>
                     <a href="#" target="_blank">
-                        <h3>Culture</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <h3>Cultures</h3>
+                        <p>Work and communicate across cultures.</p>
+                        <span class="start-btn">Launch</span>
                     </a>
-                    <a href="https://rise.articulate.com/share/Xv_ntK1Qq7DdkVaUZlHOeaO3-yLZALKl" target="_blank">
+                    <a href="#" target="_blank">
+                        <h3>Habits</h3>
+                        <p>Get things done by setting productive and mindful habits.</p>
+                        <span class="start-btn">Launch</span>
+                    </a>
+                    <a href="#" target="_blank">
+                        <h3>Introspection</h3>
+                        <p>Great leadership starts with knowing yourself. Begin your self-discovery journey.</p>
+                        <span class="start-btn">Launch</span>
+                    </a>
+                    <a href="#" target="_blank">
+                        <h3>Sleep</h3>
+                        <p>Learn the basics of sleep and the Resmed products that help patients sleep soundly.</p>
+                        <span class="start-btn">Launch</span>
+                    </a>
+                    <a href="#" target="_blank">
                         <h3>Biases</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <p>We all have biases. Learn to recogize your own bias and how it plays apart of your decision-making process.</p>
+                        <span class="start-btn">Launch</span>
                     </a>
                 </div>
             </section>
-            <div class="underline"></div>
-            </section>
+            <div style="clear: both;"></div>
             <section id="collaborate" class="playlist">
                 <h2>Team Collaboration</h2>
-                <p>Discover how to build a team culture of psychological safety, inclusion, flexibility and high performance.</p>
+                <p>Build a team culture of psychological safety, inclusion, flexibility and high performance.</p>
                 <div class="cards">
                     <a href="#" target="_blank">
                         <h3>Safety</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <p>Create a psychologically safe environment where people can speak up, make mistakes, and bring their full selves to work.</p>
+                        <span class="start-btn">Launch</span>
                     </a>
                     <a href="#" target="_blank">
                         <h3>Team Plays</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        <span class="start-btn">Launch</span>
                     </a>
                     <a href="#" target="_blank">
-                        <h3>Belonging</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <h3>BIDs</h3>
+                        <p>Create Belonging, Inclusion and Diversity in everything we do.</p>
+                        <span class="start-btn">Launch</span>
                     </a>
                     <a href="#" target="_blank">
-                        <h3>Agility</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <h3>Flexible Teams</h3>
+                        <p>Effectively collaborate with your team, regardless of your physical location.</p>
+                        <span class="start-btn">Launch</span>
+                    </a>
+                    <a href="#" target="_blank">
+                        <h3>Change Agile</h3>
+                        <p>Change is inevitable. Learn what it means to be a Change Agile team, and how to put this into practice.</p>
+                        <span class="start-btn">Launch</span>
                     </a>
                     <a href="#" target="_blank">
                         <h3>Advocacy</h3> 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <p>Create an evironment where people have the confidence and skills to speak up and share difference viewpoints.</p>
+                        <span class="start-btn">Launch</span>
+                    </a>
+                    <a href="#" target="_blank">
+                        <h3>OKRs</h3> 
+                        <p>Learn the concepts behind OKRs (Objectives and Key Results) and how to implement the framework for your team.</p>
+                        <span class="start-btn">Launch</span>
+                    </a>
+                    <a href="#" target="_blank">
+                        <h3>Business Excellence</h3>
+                        <p>Discover what Business Excellenece means both externally and within ResMed.</p>
+                        <span class="start-btn">Launch</span>
+                    </a>
+                    <a href="#" target="_blank">
+                        <h3>Conversations</h3>
+                        <p>Have better conversations.</p>
+                        <span class="start-btn">Launch</span>
                     </a>
                 </div>
             </section>
-            <div class="underline"></div>
+            <div style="clear: both;"></div>
             <section id="lead" class="playlist">
                 <h2>People Leadership</h2>
                 <p>Enable your team to grow and perform at their best.</p>
                 <div class="cards">
                     <a href="#" target="_blank">
-                        <h3>People Leader</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <h3>The Role</h3>
+                        <p>Whether you are an experienced People Leader or a first time Manager, develop your team to be best they can be. </p>
+                        <span class="start-btn">Launch</span>
                     </a>
                     <a href="#" target="_blank">
-                        <h3>Leading Teams</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                        <h3>Leading</h3>
+                        <p>Lead and manage a diverse, distributed team.</p>
+                        <span class="start-btn">Launch</span>
                     </a>
                 </div>
             </section>
-            
-        </section>
-        
-
-    </main>
-</body>
-</html>
+            <div style="clear: both; margin-bottom: 49rem;"></div>
+            </div>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</div>
