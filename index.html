@@ -47,6 +47,11 @@
                 border-spacing: 0;
             }
 
+            .cards a:first-child,
+            .cards section:first-child {
+                margin-left: 0;
+            }
+
             /* apply a natural box layout model to all elements, but allowing components to change */
             html {
                 -webkit-box-sizing: border-box;
@@ -102,8 +107,7 @@
                 padding: 0 3.5rem;
             }
 
-            .nav,
-            h1 {
+            .nav {
                 padding: 3.5rem;
             }
 
@@ -111,7 +115,7 @@
                 font-weight: bolder;
             }
 
-            .nav a:hover {
+            .nav .link:hover {
                 background: linear-gradient(150deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
                 background: var(--grad-one);
                 color: #fff !important;
@@ -144,9 +148,25 @@
                 transition: color 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             }
 
+            #header-shape-gradient {
+                --color-stop-one: #0077c0;
+                --color-stop-two: #4156a6;
+                --color-stop-three: #6f2c91;
+                --color-stop-four: #a52868;
+            }
+
+            .demo-close:hover #Icon_ionic-ios-close-2{
+                fill: url(#header-shape-gradient) !important;
+            }
+
+
             h1 {
-                font-size: 3.5rem;
+                font-size: 6.5rem;
                 font-weight: bolder;
+            }
+
+            #LC {
+                font-size: 2.7rem;
             }
 
             h2 {
@@ -201,6 +221,10 @@
                 font-size: 1.6rem;
             }
 
+            .modal__content p {
+                margin-top: 0;
+            }
+
             .foundations {
                 display: flex;
                 justify-content: center;
@@ -208,7 +232,7 @@
             }
 
             #modal__one h2 {
-                color: #4156A6;
+                color: #D12244;
             }
 
             #leader-principle {
@@ -281,6 +305,15 @@
                 font-weight: bold;
             }
 
+            .cards a{
+                    width: 22rem;
+                    line-height: 1;
+                }
+
+                .cards section {
+                    width: 26rem;
+                }
+
             /********** Desktop ***********/
             @media (min-width: 970px) {
                 .body {
@@ -309,7 +342,7 @@
                 }
 
                 .header {
-                    padding: 10rem;
+                    padding: 10rem 0;
                     display: -webkit-box;
                     display: -ms-flexbox;
                     display: flex;
@@ -398,7 +431,7 @@
                 </div>
             </div>
             <div class=nav>
-                <p>Diverse, entrepreneurial people are key to our 2025 growth strategy. How can you weave a <a class="modal__trigger" data-modal="#modal__one" href="#" target="_blank" id="foundation" href="#">People Foundation</a> mindset into your work at ResMed?</p> 
+                <p>Diverse, entrepreneurial people are key to our 2025 growth strategy. How can you weave a <a class="link modal__trigger" data-modal="#modal__one" href="#" target="_blank" id="foundation" href="#">People Foundation</a> mindset into your work at ResMed?</p> 
                 <div id="modal__one" class="modal modal__bg" role="dialog" aria-hidden="true">
                     <div class="modal__dialog">
                         <div class="modal__content">
@@ -429,16 +462,27 @@
                             <div style="clear: both;"></div>
                             <!-- modal close button -->
                             <a href="" class="modal__close demo-close">
-                                <svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36.938" height="38.933" viewBox="0 0 36.938 38.933">
+                                    <defs>
+                                        <linearGradient id="header-shape-gradient" x2="0.35" y2="1">
+                                            <stop offset="0%" stop-color="var(--color-stop-one)" />
+                                            <stop offset="35%" stop-color="var(--color-stop-two)" />
+                                            <stop offset="70%" stop-color="var(--color-stop-three)" />
+                                            <stop offset="100%" stop-color="var(--color-stop-four)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <g id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" style="isolation: isolate">
+                                        <path id="Icon_ionic-ios-close-2" data-name="Icon ionic-ios-close" d="M34.131,30.755,47.324,16.846a3.4,3.4,0,0,0,0-4.609,2.993,2.993,0,0,0-4.372,0L29.759,26.146,16.566,12.237a2.993,2.993,0,0,0-4.372,0,3.375,3.375,0,0,0,0,4.609L25.387,30.755,12.194,44.664a3.375,3.375,0,0,0,0,4.609,2.993,2.993,0,0,0,4.372,0L29.759,35.364,42.952,49.274a2.993,2.993,0,0,0,4.372,0,3.4,3.4,0,0,0,0-4.609Z" transform="translate(-11.285 -11.289)" fill="#d12244" style="mix-blend-mode: darken;isolation: isolate"/>
+                                    </g>
+                                </svg>
                             </a>
-                            
                         </div>
                     </div>
                 </div>
                 
                 <br>
                 <p>
-                    Watch our <a id="dev-link" href="#develop">Self Development</a>, <a id="team-link" href="#collaborate">Team Collaboration</a>, <a id="lead-link" href="#lead">People Leadership</a> learning playlists below to discover how to connect the dots individually and collectively, both within teams and between teams. 
+                    Watch our <a class="link" id="dev-link" href="#develop">Self Development</a>, <a class="link" id="team-link" href="#collaborate">Team Collaboration</a>, <a class="link" id="lead-link" href="#lead">People Leadership</a> learning playlists below to discover how to connect the dots individually and collectively, both within teams and between teams. 
                 </p>
             </div>
         </div>
