@@ -47,11 +47,6 @@
                 border-spacing: 0;
             }
 
-            .cards a:first-child,
-            .cards section:first-child {
-                margin-left: 0;
-            }
-
             /* apply a natural box layout model to all elements, but allowing components to change */
             html {
                 -webkit-box-sizing: border-box;
@@ -126,7 +121,7 @@
             }
 
             #dev-link {
-                color: #2062AF;
+                color: #0077c0;
                 color: var(--primary-blue);
                 transition: color 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             }
@@ -166,7 +161,7 @@
             }
 
             #LC {
-                font-size: 2.7rem;
+                font-size: 2.2rem;
             }
 
             h2 {
@@ -199,10 +194,11 @@
                 scroll-snap-align: start;
             }
 
-            .cards a, .cards section {
+            .cards a, 
+            .cards section {
                 position: relative;
                 float: left;
-                margin: 0.6rem;
+                margin: 0.6rem 1.2rem 0.6rem 0;
                 height: 24rem;
                 text-decoration: none;
                 padding: 2rem;
@@ -256,12 +252,12 @@
             }
 
             #develop a {
-                background: #2062AF;
+                background: #0077c0;
                 background: var(--primary-blue);
             }
 
             #develop h2 {
-                color:#2062AF;
+                color:#0077c0;
                 color: var(--primary-blue);
             }
 
@@ -325,6 +321,10 @@
                 .header div {
                     width: 100rem;
                     margin: auto;
+                }
+
+                .modal {
+                    align-items: center;
                 }
 
                 .nav {
@@ -462,7 +462,7 @@
                             <div style="clear: both;"></div>
                             <!-- modal close button -->
                             <a href="" class="modal__close demo-close">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36.938" height="38.933" viewBox="0 0 36.938 38.933">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" viewBox="0 0 36.938 38.933">
                                     <defs>
                                         <linearGradient id="header-shape-gradient" x2="0.35" y2="1">
                                             <stop offset="0%" stop-color="var(--color-stop-one)" />
