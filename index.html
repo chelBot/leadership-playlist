@@ -57,12 +57,6 @@
                 -webkit-box-sizing: inherit;
                         box-sizing: inherit;
             }
-/* 
-            #develop, 
-            #collaborate, 
-            #lead {
-                scroll-behavior: smooth;
-            } */
 
             /* cornerstone reset */
             .widgetDropped {
@@ -126,7 +120,7 @@
                 margin-top: 2rem;
             }
 
-           .nav .link {
+            .nav .link {
                 font-size: 2rem;
             }
 
@@ -149,7 +143,7 @@
             }
 
             #foundation  {
-                color: #D12244;
+                color: #B72755;
                 transition: color 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             }
 
@@ -157,13 +151,12 @@
                 --color-stop-one: #0077c0;
                 --color-stop-two: #4156a6;
                 --color-stop-three: #6f2c91;
-                --color-stop-four: #a52868;
+                --color-stop-four: #B72755;
             }
 
             .demo-close:hover #Icon_ionic-ios-close-2{
                 fill: url(#header-shape-gradient) !important;
             }
-
 
             h1 {
                 font-size: 6.5rem;
@@ -229,8 +222,23 @@
                 flex-direction: column;
             }
 
+            #collaborate #plays {
+                background: rgba(65,86,166,1);
+                background: linear-gradient(180deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(65,86,166,1) 69%, rgba(111,44,145,1) 100%);
+                background-image: linear-gradient(rgba(65,86,166,1), rgba(111,44,145,1)), url("ico-2-material@2x.png");
+                background-image: linear-gradient(rgba(0,119,192, 1), rgba(65,86,166,0.7)),
+                    url("ico-2-material@2x.png");
+                background-size: cover;
+                background-position: center;
+                border: #6F2C91 0.5rem dashed;  
+            }
+
+            #plays .start-btn {
+                border-style: dashed;
+            }
+
             #modal__one h2 {
-                color: #D12244;
+                color:#B72755;
             }
 
             #leader-principle {
@@ -250,7 +258,7 @@
             }
 
             #inclusive-principle {
-                background: #D12244;
+                background: #B72755;
             }
 
             #develop a {
@@ -632,7 +640,7 @@
                                         </linearGradient>
                                     </defs>
                                     <g id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" style="isolation: isolate">
-                                        <path id="Icon_ionic-ios-close-2" data-name="Icon ionic-ios-close" d="M34.131,30.755,47.324,16.846a3.4,3.4,0,0,0,0-4.609,2.993,2.993,0,0,0-4.372,0L29.759,26.146,16.566,12.237a2.993,2.993,0,0,0-4.372,0,3.375,3.375,0,0,0,0,4.609L25.387,30.755,12.194,44.664a3.375,3.375,0,0,0,0,4.609,2.993,2.993,0,0,0,4.372,0L29.759,35.364,42.952,49.274a2.993,2.993,0,0,0,4.372,0,3.4,3.4,0,0,0,0-4.609Z" transform="translate(-11.285 -11.289)" fill="#d12244" style="mix-blend-mode: darken;isolation: isolate"></path>
+                                        <path id="Icon_ionic-ios-close-2" data-name="Icon ionic-ios-close" d="M34.131,30.755,47.324,16.846a3.4,3.4,0,0,0,0-4.609,2.993,2.993,0,0,0-4.372,0L29.759,26.146,16.566,12.237a2.993,2.993,0,0,0-4.372,0,3.375,3.375,0,0,0,0,4.609L25.387,30.755,12.194,44.664a3.375,3.375,0,0,0,0,4.609,2.993,2.993,0,0,0,4.372,0L29.759,35.364,42.952,49.274a2.993,2.993,0,0,0,4.372,0,3.4,3.4,0,0,0,0-4.609Z" transform="translate(-11.285 -11.289)" fill="#B72755" style="mix-blend-mode: darken;isolation: isolate"></path>
                                     </g>
                                 </svg>
                             </a>
@@ -704,9 +712,9 @@
                         <p>Create a psychologically safe environment where people can speak up, make mistakes, and bring their full selves to work.</p>
                         <span class="start-btn">Launch</span>
                     </a>
-                    <a href="#" target="_blank">
+                    <a id="plays" href="#" target="_blank">
                         <h3>Team Plays</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        <p>Grow together with these interactive materials.</p>
                         <span class="start-btn">Launch</span>
                     </a>
                     <a href="https://resmed.csod.com/DeepLink/ProcessRedirect.aspx?module=59" target="_blank">
