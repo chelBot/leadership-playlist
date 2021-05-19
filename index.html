@@ -95,9 +95,8 @@
                 padding: 3.5rem;
                 background: #0077c0;
                 background: var(--primary-blue);
-                background-image: linear-gradient(rgba(0,119,192, 1), rgba(65,86,166,0.9)), url(ico-1-playlist@3x.png);
-                background-size: 17%;
-                background-position: 16% 325%;
+                background-image: linear-gradient(rgba(0,119,192, 0.96), rgba(65,86,166,0.9)), url(ico-1-playlist@3x.png);
+                background-position: 5% 264%;
                 color: #fff;
             }
 
@@ -417,8 +416,8 @@
                 }
 
                 .playlist { 
-                    width: 90rem;
-                    margin: auto;
+                    width: 92rem;
+                    margin:auto;
                 }
 
                 .cards {
@@ -460,7 +459,7 @@
                 align-items: flex-start;
             }
             .modal__bg {
-                background: #0e0e0ee0;
+                background: rgba(0,0,0,0.8);
                 transition: all 0.1s ease-out;
             }
             .modal__dialog {
@@ -470,7 +469,7 @@
             .modal__content {
                 will-change: transform, opacity;
                 position: relative;
-                padding: 7rem;
+                padding: 6rem;
                 background: #fff;
                 background-clip: padding-box;
                 box-shadow: 0 12px 15px 0 rgba(0,0,0,0.25);
@@ -600,7 +599,7 @@
                                     <p>We solve big problems, are agile, always curious, think critically and drive change.</p>
                                 </section>
                                 <section class="foundations" id="customer-principle">
-                                    <h3>Customer Centric</h3>
+                                    <h3>Customer Obsessed</h3>
                                     <p>We seek to understand our customers and create world leading solutions.</p>
                                 </section>
                                 <section class="foundations" id="inclusive-principle">
@@ -658,7 +657,7 @@
                     </a>
                     <a href="https://resmed.csod.com/DeepLink/ProcessRedirect.aspx?module=58" target="_blank">
                         <h3>Cultures</h3>
-                        <p>Work and communicate across cultures.</p>
+                        <p>Hone your cultural intelligence as you work and communicate across the globe.</p>
                         <span class="start-btn">Launch</span>
                     </a>
                     <a href="https://resmed.csod.com/DeepLink/ProcessRedirect.aspx?module=80" target="_blank">
@@ -710,7 +709,7 @@
                     </a>
                     <a href="https://resmed.csod.com/DeepLink/ProcessRedirect.aspx?module=56" target="_blank">
                         <h3>Advocacy</h3> 
-                        <p>Create an evironment where people have the confidence and skills to speak up and share difference viewpoints.</p>
+                        <p>Create an evironment where people have the confidence to speak up for themselves and for others.</p>
                         <span class="start-btn">Launch</span>
                     </a>
                     <a href="https://resmed.csod.com/DeepLink/ProcessRedirect.aspx?module=66" target="_blank">
@@ -725,7 +724,7 @@
                     </a>
                     <a href="https://resmed.csod.com/DeepLink/ProcessRedirect.aspx?module=81" target="_blank">
                         <h3>Conversations</h3>
-                        <p>Have better conversations.</p>
+                        <p>Have better, more meaningful conversations.</p>
                         <span class="start-btn">Launch</span>
                     </a>
                     <a id="plays" href="#" target="_blank">
@@ -741,7 +740,7 @@
                 <p>Enable your team to grow and perform at their best.</p>
                 <div class="cards">
                     <a href="https://resmed.csod.com/DeepLink/ProcessRedirect.aspx?module=52" target="_blank">
-                        <h3>The Role</h3>
+                        <h3>People Leader</h3>
                         <p>Whether you are an experienced People Leader or a first time Manager, develop your team to be best they can be. </p>
                         <span class="start-btn">Launch</span>
                     </a>
@@ -752,7 +751,7 @@
                     </a>
                 </div>
             </section>
-            <div style="clear: both; margin-bottom: 49rem;"></div>
+            <div style="clear: both; margin-bottom: 100rem;"></div>
             </div>
         </main>
     </div>
@@ -772,50 +771,46 @@
 
         //IE shim
         if (!('remove' in Element.prototype)) {
-        Element.prototype.remove = function() {
-            if (this.parentNode) {
-                this.parentNode.removeChild(this);
-            }
-        };
+            Element.prototype.remove = function() {
+                if (this.parentNode) {
+                    this.parentNode.removeChild(this);
+                }
+            };
         }
 
         // make it easier for yourself by not having to type as much to select an element
         function $qsa(el) {
-        return document.querySelectorAll(el);
+            return document.querySelectorAll(el);
         }
 
         var getId = function() {
-        // body[0].classList.add('modal--open');
-        // When the modal is shown, we want a fixed body
-        // body[0].style.position = 'fixed';
-        // body[0].style.top = `${window.scrollY}px`;
-        var self = this;
-        // get the value of the data-modal attribute from the button
-        var modalId = self.dataset.modal;
-        var len = modalId.length;
-        // remove the '#' from the string
-        var modalIdTrimmed = modalId.substring(1, len);
-        // select the modal we want to activate
-        var modal = document.getElementById(modalIdTrimmed);
-        // execute function that creates the temporary expanding div
-        makeDiv(self, modal);
-        };
+            var self = this;
+            // get the value of the data-modal attribute from the button
+            var modalId = self.dataset.modal;
+            var len = modalId.length;
+            // remove the '#' from the string
+            var modalIdTrimmed = modalId.substring(1, len);
+            // select the modal we want to activate
+            var modal = document.getElementById(modalIdTrimmed);
+            // execute function that creates the temporary expanding div
+            makeDiv(self, modal);
+            };
 
-        var makeDiv = function(self, modal) {
+            var makeDiv = function(self, modal) {
 
-        var fakediv = document.getElementById('modal__temp');
+            var fakediv = document.getElementById('modal__temp');
 
-        /**
-         * if there isn't a 'fakediv', create one and append it to the button that was
-         * clicked. after that execute the function 'moveTrig' which handles the animations.
-         */
+            /**
+             * if there isn't a 'fakediv', create one and append it to the button that was
+             * clicked. after that execute the function 'moveTrig' which handles the animations.
+             */
 
-        if (fakediv === null) {
-            var div = document.createElement('div');
-            div.id = 'modal__temp';
-            self.appendChild(div);
-            moveTrig(self, modal, div);
-        }
+            if (fakediv === null) {
+                var div = document.createElement('div');
+                div.id = 'modal__temp';
+                self.appendChild(div);
+                moveTrig(self, modal, div);
+            }
         };
 
         var moveTrig = function(trig, modal, div) {
@@ -864,39 +859,38 @@
         };
 
         var open = function(m, div) {
-        document.querySelector("body").classList.add('modal--open');
-        if (!isOpen) {
-            document.querySelector("body").style.overflow = 'hidden';
+            document.querySelector("body").classList.add('modal--open');
+            if (!isOpen) {
+                document.querySelector("body").style.overflow = 'hidden';
 
-            // select the content inside the modal
-            var content = m.querySelector('.modal__content');
-            // reveal the modal
-            m.classList.add('modal--active');
-            // reveal the modal content
-            content.classList.add('modal__content--active');
+                // select the content inside the modal
+                var content = m.querySelector('.modal__content');
+                // reveal the modal
+                m.classList.add('modal--active');
+                // reveal the modal content
+                content.classList.add('modal__content--active');
 
-            /**
-             * when the modal content is finished transitioning, fadeout the temporary
-             * expanding div so when the window resizes it isn't visible ( it doesn't
-             * move with the window).
-             */
+                /**
+                 * when the modal content is finished transitioning, fadeout the temporary
+                 * expanding div so when the window resizes it isn't visible ( it doesn't
+                 * move with the window).
+                 */
 
-            content.addEventListener('transitionend', hideDiv, false);
+                content.addEventListener('transitionend', hideDiv, false);
 
-            isOpen = true;
-        }
+                isOpen = true;
+            }
 
-        function hideDiv() {
-            // fadeout div so that it can't be seen when the window is resized
-            div.style.opacity = '0';
-            content.removeEventListener('transitionend', hideDiv, false);
-        }
+            function hideDiv() {
+                // fadeout div so that it can't be seen when the window is resized
+                div.style.opacity = '0';
+                content.removeEventListener('transitionend', hideDiv, false);
+            }
         };
 
         var close = function(event) {
-
             event.preventDefault();
-        event.stopImmediatePropagation();
+            event.stopImmediatePropagation();
 
         var target = event.target;
         var div = document.getElementById('modal__temp');
@@ -914,10 +908,9 @@
             div.removeAttribute('style');
 
                 /**
-                 * iterate through the modals and modal contents and triggers to remove their active classes.
-            * remove the inline css from the trigger to move it back into its original position.
+                * iterate through the modals and modal contents and triggers to remove their active classes.
+                * remove the inline css from the trigger to move it back into its original position.
                 */
-
             
                     modals[0].classList.remove('modal--active');
                     content[0].classList.remove('modal__content--active');
@@ -925,12 +918,9 @@
             trigger[0].style.webkitTransform = 'none';
                     trigger[0].classList.remove('modal__trigger--active');
                 
-
             // when the temporary div is opacity:1 again, we want to remove it from the dom
                 div.addEventListener('transitionend', removeDiv, false);
-
-            isOpen = false;
-
+                isOpen = false;
         }
 
         function removeDiv() {
@@ -945,7 +935,6 @@
         };
 
         var bindActions = function() {
-
             trigger[0].addEventListener('click', getId, false);
             trigger[0].addEventListener('click',function(e){
             e.preventDefault();
@@ -956,11 +945,11 @@
         };
 
         var init = function() {
-        bindActions();
+            bindActions();
         };
 
         return {
-        init: init
+            init: init
         };
 
         }());
